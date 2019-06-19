@@ -5,9 +5,15 @@
   height: 290px;
 }
 
-.HiScore {
-  background-color: red;
+#HiScore {
+  /*background-color: red;*/
+  width: 110%;
+  margin-left: -5%;
 }
+/*#HiScore:parent {
+  background-color: red;
+  width: 100%;
+}*/
 
 .user-card-img {
   display: inline-block;

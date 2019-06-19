@@ -1,0 +1,28 @@
+._404 {
+  background-color: #FFA252;
+  height: 100%;
+  color: white;
+  padding-top: 15%;
+  font-weight: 600;
+}
+.message-container {
+  margin-left: 30%;
+}
+._404-text {
+  font-size: -webkit-xxx-large;
+  text-shadow: 2px 2px #ff0000;
+}
+._404-message {
+  margin: 15px 0 20px 5%;
+  /*margin-left: 5%;*/
+  font-size: x-large;
+  text-shadow: 1px 1px #ff0000;
+}
+#_404-btn {
+  color: #525252;
+  background-color: #FCFCFC;
+  font-weight: 700;
+  float: right;
+  margin-right: 40%;
+  width: 100px;
+}

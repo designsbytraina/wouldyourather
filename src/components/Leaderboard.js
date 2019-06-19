@@ -13,7 +13,10 @@ class Leaderboard extends React.Component {
         <div className='leaderboard-label'>
           leaderboard
         </div>
-        {this.state.count.map( (c) => <LeaderboardUser hiScore={false} /> )}
+        {this.state.count.map( (c) => c === 1
+          ? <LeaderboardUser hiScore={true} />
+          : <LeaderboardUser hiScore={false} /> )
+        }
       </div>
     )
   }

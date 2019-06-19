@@ -1,0 +1,29 @@
+.PollUnanswered {
+  border: 1px solid grey;
+  padding: 30px 1px 50px 0;
+}
+.optiona-unanswered, .optionb-unanswered {
+  display: block;
+  width: 100%;
+  border: 1px solid #FFA252;
+  /*background-color: #F7B57D;*/
+  font-weight: 600;
+  padding: 10px 0;
+  color: #FFA252;
+  margin: 15px 0;
+}
+#selected {
+  color: white;
+  background-color: #F7B57D;
+  font-weight: 600;
+}
+.poll-detail-options {
+  margin: 30px auto;
+  text-align: center;
+}
+.poll-detail-btn {
+  width: 90px;
+  float: right;
+  margin-right: 15px;
+  /*margin-bottom: 50px;*/
+}

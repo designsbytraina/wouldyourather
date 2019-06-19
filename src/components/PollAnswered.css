@@ -1,0 +1,79 @@
+.PollAnswered {
+  border: 1px solid grey;
+  padding: 30px 1px 130px 0;
+}
+.poll-detail-results {
+  /*background-color: red;*/
+  margin-right: -1px;
+  padding: 40px 0;
+  text-align: center;
+  /*display: inline-block;*/
+
+}
+.optiona-answered, .optionb-answered {
+  display: inline;
+  width: 40%;
+  padding: 50px 0;
+  font-weight: 600;
+  height: 100px;
+  /*height: 100px;*/
+}
+.optiona-answered-text, .optionb-answered-text, .optiona-answered-count, .optionb-answered-count {
+  display: block;
+}
+.optiona-answered-text, .optionb-answered-text {
+  padding-bottom: 30px;
+}
+.optiona-answered-count, .optionb-answered-count {
+  font-size: xx-large;
+}
+.optiona-answered {
+  background-color: #F7B57D;
+  float: left;
+  color: white;
+}
+.optiona-answered-text {
+  padding-bottom: 30px;
+}
+.optiona-answered-count {
+
+}
+.optionb-answered {
+  background-color: #D5D2D2;
+  float: right;
+
+}
+.optionb-answered-text, .optionb-answered-count {
+  color: #717171;
+}
+.optionb-answered-text {
+
+}
+.optionb-answered-count {
+
+}
+.authuser-choice {
+  /*display: inline-block;*/
+  float: right;
+  margin-top: 40px;
+  font-size: small;
+  /*padding-top: 20px;*/
+  margin-right: 7px;
+}
+.or-text {
+  padding-top: 80px;
+  display: inline-block;
+  /*margin-top: 200px;*/
+}
+.total-results {
+  /*float: right;*/
+  float: right;
+  /*padding: 100px;*/
+  display: block;
+  padding-top: 10px;
+  margin-right: 5px;
+  color: grey;
+  /*margin: 50px;*/
+  /*margin: 5px;*/
+
+}

@@ -3,10 +3,10 @@ import './LeaderboardUser.css';
 
 class LeaderboardUser extends React.Component {
   render() {
-    const LeaderBoardStyling = this.props.hiScore === true ? 'HiScore' : 'LeaderboardUser'
+    const LeaderBoardStyling = this.props.hiScore === true ? 'HiScore' : ''
 
     return (
-      <div className={LeaderBoardStyling}>
+      <div id={LeaderBoardStyling} className='LeaderboardUser'>
         <div className='user-card-img'>
           <img className='user-avatar' src='https://via.placeholder.com/290x290'/>
         </div>
