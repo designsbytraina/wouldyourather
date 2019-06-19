@@ -1,0 +1,46 @@
+.DashboardPoll {
+  border: 1px solid grey;
+  padding: 5px;
+  /*margin-bottom: 10px;*/
+  margin: 5px;
+  height: 290px;
+}
+.poll-card-img {
+  display: inline-block;
+}
+.author-avatar {
+  display: inline;
+  height: 290px;
+  width: 290px;
+}
+
+.poll-card-body {
+  display: inline-block;
+  /*height: 290px;*/
+  float: right;
+}
+
+.author-name, .wyr-body-text {
+  display: block;
+  margin-right: 515px;
+}
+.author-name {
+  margin-top: 15px;
+  color: grey;
+}
+.wyr-body-text {
+  margin: 70px 0 20px 0;
+  font-size: x-large;
+}
+.wyr-body-options {
+/*  margin: 0 45px;*/
+  display: inline;
+  font-size: large;
+  font-style: italic;
+}
+
+.dashboard-poll-btn {
+  float: right;
+  margin-top: 100px;
+  width: 85px;
+}

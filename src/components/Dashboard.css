@@ -1,0 +1,29 @@
+.Dashboard {
+  width: 50%;
+  margin: 3% auto;
+  padding: 10px;
+}
+
+.dashboard-poll-list {
+  padding-top: 5px;
+  border: 1px solid grey;
+}
+
+.dashboard-btn {
+  height: 40px;
+  margin-top: -10px;
+  border: none;
+  border-radius: 5px 5px 0 0;
+  font-size: large;
+  width: 50%;
+}
+.unanswered {
+  background-color: #FFA252;
+  font-weight: 600;
+  color: white;
+}
+.answered {
+  background-color: #D5D2D2;
+  font-weight: 600;
+  color: #717171;
+}

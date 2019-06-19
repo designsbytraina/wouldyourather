@@ -1,0 +1,77 @@
+.LeaderboardUser {
+  height: 100%;
+  border: 1px solid grey;
+  margin: 15px;
+  height: 290px;
+}
+
+.HiScore {
+  background-color: red;
+}
+
+.user-card-img {
+  display: inline-block;
+}
+
+.user-avatar {
+  display: inline;
+  height: 290px;
+  width: 290px;
+}
+
+.user-card-body {
+  display: inline-block;
+  /*height: 290px;*/
+  /*padding-left: 3px;*/
+  float: right;
+  height: 100%;
+}
+
+.user-name {
+  display: inline-block;
+  margin-right: 500px;
+  margin-top: 15px;
+  color: grey;
+  font-size: x-large;
+  /*padding-right: 100px;*/
+  width: 75%;
+  /*background-color: red;*/
+  border-bottom: 1px solid grey;
+}
+.user-stats {
+  margin: 70px 0 20px 0;
+  font-size: x-large;
+}
+.row-title {
+  /*color: red;*/
+  width: 440px;
+  /*padding-bottom: 10px;*/
+}
+.stats-row {
+  /*padding: 45px;*/
+  /*height: 15px;*/
+}
+.user-total-score {
+  float: right;
+  color: white;
+  font-weight: 600;
+  /*font-size: x-large;*/
+  background-color: #FFA252;
+  width: 130px;
+  display: inline-block;
+  margin-top: -203px;
+  height: 290px;
+  text-align: center;
+}
+.score-text, .score-number {
+  display: block;
+}
+.score-text {
+  font-size: large;
+  font-weight: 300;
+  margin-top: 50px;
+}
+.score-number {
+  font-size: -webkit-xxx-large;
+  margin-top: 80px;
+}

@@ -1,16 +1,19 @@
 import React from 'react';
+import './DashboardPoll.css';
 
 class DashboardPoll extends React.Component {
   render() {
     return (
-      <div style={{border:'1px solid black', width: '25%', display:'inline-block'}} >
-        <img />
-        <h6>AUTHOR asks:</h6>
-        <p>
-          <span>Would you rather ...</span><br/>
-          <span><strong>optionA</strong> or <strong>optionB</strong></span>
-        </p>
-        <button>view poll</button>
+      <div className='DashboardPoll'>
+        <div className='poll-card-img'>
+          <img className='author-avatar' src='https://via.placeholder.com/290x290'/>
+        </div>
+        <div className='poll-card-body'>
+          <span className='author-name'>AUTHOR asks:</span>
+          <span className='wyr-body-text'>Would you rather ...</span>
+          <span className='wyr-body-options'><strong>optionA</strong></span> or <span className='wyr-body-options'><strong>optionB</strong></span>
+          <button className='dashboard-poll-btn btn'>view poll</button>
+        </div>
       </div>
     )
   }

@@ -1,0 +1,38 @@
+.NewPoll {
+  width: 35%;
+  margin: 3% auto;
+  padding: 10px;
+}
+
+.new-poll-label {
+  font-size: x-large;
+}
+.new-poll-body {
+  border: 1px solid grey;
+  padding: 50px;
+}
+.wyr-body-intro {
+  /*margin: 0 auto;*/
+  display: block;
+  font-size: x-large;
+  margin-bottom: 20px;
+}
+.new-poll-form {
+  margin: 30px auto;
+  text-align: center;
+}
+.form-input {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  height: 40px;
+  font-size: large;
+  font-weight: 300;
+}
+.new-poll-btn {
+  width: 95px;
+  float: right;
+  /*margin-bottom: 50px;*/
+}

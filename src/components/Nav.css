@@ -1,0 +1,29 @@
+.Nav {
+  background-color: #F7B57D;
+  height: 65px;
+  color: white;
+}
+
+.site-title {
+  display: inline-block;
+  font-size: xx-large;
+  font-weight: 600;
+  margin-left: 45px;
+  margin-top: 13px;
+}
+
+.site-links {
+  float: right;
+  display: inline-block;
+}
+.site-links ul li {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 50px;
+  padding-top: 5px;
+  font-size: large;
+}
+
+.logout-link {
+  padding-left: 120px;
+}

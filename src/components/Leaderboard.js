@@ -1,5 +1,6 @@
 import React from 'react';
 import LeaderboardUser from './LeaderboardUser';
+import './Leaderboard.css';
 
 class Leaderboard extends React.Component {
   state = {
@@ -8,9 +9,11 @@ class Leaderboard extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Leaderboard</h2>
-        {this.state.count.map( (c) => <LeaderboardUser /> )}
+      <div className='Leaderboard'>
+        <div className='leaderboard-label'>
+          leaderboard
+        </div>
+        {this.state.count.map( (c) => <LeaderboardUser hiScore={false} /> )}
       </div>
     )
   }
