@@ -6,7 +6,7 @@ class DashboardPoll extends React.Component {
     return (
       <div className='DashboardPoll'>
         <div className='poll-card-img'>
-          <img className='author-avatar' src='https://via.placeholder.com/290x290'/>
+          <img alt='placeholder' className='author-avatar' src='https://via.placeholder.com/290x290'/>
         </div>
         <div className='poll-card-body'>
           <span className='author-name'>AUTHOR asks:</span>

@@ -10,10 +10,10 @@ class Nav extends React.Component {
         </div>
         <div className='site-links'>
           <ul>
-            <li>home</li>
-            <li>new poll +</li>
-            <li>leaderboard</li>
-            <li className='logout-link'>logout</li>
+            <li key='home'>home</li>
+            <li key='newPoll'>new poll +</li>
+            <li key='leaderboard'>leaderboard</li>
+            <li key='logout' className='logout-link'>logout</li>
           </ul>
         </div>
       </div>

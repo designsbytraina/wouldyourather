@@ -14,7 +14,7 @@ import _404 from './404.js';
 // import logo from '../logo.svg';
 import './App.css';
 
-class App() extends React.Component {
+class App extends React.Component {
   componentWillMount() {
     this.props.dispatch(handleInitialData());
   }

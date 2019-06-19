@@ -8,7 +8,7 @@ class LeaderboardUser extends React.Component {
     return (
       <div id={LeaderBoardStyling} className='LeaderboardUser'>
         <div className='user-card-img'>
-          <img className='user-avatar' src='https://via.placeholder.com/290x290'/>
+          <img alt='placeholder' className='user-avatar' src='https://via.placeholder.com/290x290'/>
         </div>
         <div className='user-card-body'>
           <span className='user-name'>username</span>

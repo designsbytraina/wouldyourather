@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
         <button className='answered dashboard-btn'>answered</button>
         <div className='dashboard-poll-list'>
         {this.state.count.map( (c) => {
-          return <DashboardPoll />
+          return <DashboardPoll key={c} />
         } )}
         </div>
       </div>
