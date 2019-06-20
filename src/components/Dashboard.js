@@ -5,8 +5,12 @@ import DashboardPoll from './DashboardPoll';
 import './Dashboard.css'
 
 class Dashboard extends React.Component {
-  state = {
-    filterDashboard: 'unanswered'
+  constructor(props) {
+    super(props);
+    this.state = {
+      filterDashboard: 'unanswered'
+    }
+    this.toggleDashboard = this.toggleDashboard.bind(this);
   }
 
   toggleDashboard(e) {
