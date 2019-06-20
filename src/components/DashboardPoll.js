@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
 import { formatQuestion } from '../utils/_DATA';
 import './DashboardPoll.css';
 
@@ -19,14 +20,20 @@ class DashboardPoll extends React.Component {
           <span className='author-name'>{author} asks:</span>
           <span className='wyr-body-text'>Would you rather ...</span>
           <span className='wyr-body-options'><strong>{optionOne}</strong></span> or <span className='wyr-body-options'><strong>{optionTwo}</strong></span>
-          <button className='dashboard-poll-btn btn'>view poll</button>
+          <Link to={{
+            pathname: `/questions/${question.id}`,
+            state: {
+              userAnswered: this.props.userAnswered,
+              questionId: question.id
+            }
+          }}><button className='dashboard-poll-btn btn'>view poll</button></Link>
         </div>
       </div>
     )
   }
 }
 
-function mapStateToProps ({authedUser, questions}, {id}) {
+function mapStateToProps ({authedUser, questions}, {id, userAnswered}) {
   const question = questions[id];
   const optionOneText = question.optionOne.text;
   const optionTwoText = question.optionTwo.text;
@@ -34,6 +41,7 @@ function mapStateToProps ({authedUser, questions}, {id}) {
 
   return {
     authedUser,
+    userAnswered,
     question: question
       ? question
       : null,
@@ -43,4 +51,4 @@ function mapStateToProps ({authedUser, questions}, {id}) {
   }
 }
 
-export default connect(mapStateToProps)(DashboardPoll);
+export default withRouter(connect(mapStateToProps)(DashboardPoll));

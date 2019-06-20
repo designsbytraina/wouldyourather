@@ -20,17 +20,29 @@ class App extends React.Component {
   }
 
   render () {
+    const authedUser = this.props.authedUser;
+    const loading = this.props.loading;
+
     return (
       <Router>
         <React.Fragment>
           <LoadingBar />
           <div className="App">
             <Nav />
-            {this.props.loading === true
-              ? null
-              : <Dashboard />
+            {authedUser === ''
+              ? <Login />
+              : null
             }
-            {/*<Login />*/}
+            {loading === true
+              ? null
+              : <div>
+                  <Route exact path='/' exact component={Dashboard} />
+                  <Route exact path='/questions/:id' exact component={PollDetail} />
+                  <Route exact path='/add' exact component={NewPoll} />
+                  <Route exact path='/leaderboard' exact component={Leaderboard} />
+                  <Route exact path='/oops' exact component={_404} />
+                </div>}
+
           </div>
         </React.Fragment>
       </Router>
@@ -38,9 +50,10 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps ({ authedUser='' }) {
   return {
-    loading: authedUser === null
+    loading: authedUser === null,
+    authedUser
   }
 }
 

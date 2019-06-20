@@ -41,12 +41,12 @@ class Dashboard extends React.Component {
         {this.state.filterDashboard === 'unanswered'
           ? <div className='dashboard-poll-list'>
             {authedUserUnanswered.map( (q) => {
-              return <DashboardPoll key={q.id} id={q.id} />
+              return <DashboardPoll key={q.id} id={q.id} userAnswered={false}/>
             } )}
             </div>
           : <div className='dashboard-poll-list'>
             {authedUserAnswered.map( (q) => {
-              return <DashboardPoll key={q.id} id={q.id} />
+              return <DashboardPoll key={q.id} id={q.id} userAnswered={true}/>
             } )}
             </div>
         }

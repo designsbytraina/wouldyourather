@@ -41,10 +41,9 @@
 .optionb-answered {
   background-color: #D5D2D2;
   float: right;
-
+  color: #717171;
 }
 .optionb-answered-text, .optionb-answered-count {
-  color: #717171;
 }
 .optionb-answered-text {
 
