@@ -1,5 +1,6 @@
 import { saveQuestion, saveQuestionAnswer } from '../utils/api';
 import { showLoading, hideLoading } from 'react-redux-loading';
+import { userAnswer } from './users';
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const SAVE_QUESTION = 'SAVE_QUESTION';
@@ -24,11 +25,12 @@ function questionAnswer ({ authedUser, id, answer }) {
 export function handleQuestionAnswer (info) {
   return (dispatch) => {
     dispatch(questionAnswer(info));
+    dispatch(userAnswer(info));
 
     return saveQuestionAnswer(info)
       .catch( (e) => {
         console.warn('Error in handleQuestionAnswer: ', e)
-        dispatch(questionAnswer(info))
+        // dispatch(questionAnswer(info))
         alert('The was an error voting in this poll. :( \nTry again.');
       } )
   }
@@ -44,8 +46,6 @@ function addQuestion (question) {
 export function handleAddQuestion ({ optionOneText, optionTwoText }) {
   return (dispatch, getState) => {
     const { authedUser } = getState()
-    console.log('~~~~~~~~~~~~~~~~');
-    console.log(optionOneText, optionTwoText);
     dispatch(showLoading());
 
     return saveQuestion({ optionOneText, optionTwoText, author: authedUser })
