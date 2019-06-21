@@ -29,7 +29,7 @@ class PollAnswered extends React.Component {
               }
             </div>
           </div>
-          <span className='total-results'>{question.optionOne.votes.length + question.optionTwo.votes.length} total votes</span>
+          <div className='total-results'>{question.optionOne.votes.length + question.optionTwo.votes.length} total votes</div>
         </div>
     )
   }

@@ -11,3 +11,46 @@ export function receiveQuestions (questions) {
     questions
   }
 }
+
+function questionAnswer ({ authedUser, id, answer }) {
+  return {
+    type: SAVE_QUESTION_ANSWER,
+    id,
+    authedUser,
+    answer
+  }
+}
+
+export function handleQuestionAnswer (info) {
+  return (dispatch) => {
+    dispatch(questionAnswer(info));
+
+    return saveQuestionAnswer(info)
+      .catch( (e) => {
+        console.warn('Error in handleQuestionAnswer: ', e)
+        dispatch(questionAnswer(info))
+        alert('The was an error voting in this poll. :( \nTry again.');
+      } )
+  }
+}
+
+function addQuestion (question) {
+  return {
+    type: SAVE_QUESTION,
+    question
+  }
+}
+
+export function handleAddQuestion ({ optionOneText, optionTwoText }) {
+  return (dispatch, getState) => {
+    const { authedUser } = getState()
+    console.log('~~~~~~~~~~~~~~~~');
+    console.log(optionOneText, optionTwoText);
+    dispatch(showLoading());
+
+    return saveQuestion({ optionOneText, optionTwoText, author: authedUser })
+      .then((question) => dispatch(addQuestion(question)))
+      .then(() => dispatch(hideLoading()))
+  }
+
+}

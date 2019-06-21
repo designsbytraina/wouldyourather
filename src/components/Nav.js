@@ -17,26 +17,28 @@ class Nav extends React.Component {
   render() {
     return (
       <div className='Nav'>
-        <div className='site-title'>
-          WYR?
-        </div>
+        <NavLink to='/' exact>
+          <div className='site-title'>
+            WYR?
+          </div>
+        </NavLink>
         <div className='site-links'>
           <ul>
-            <li key='home'>
-              <NavLink to='/' exact activeClassName='active'>
+            <NavLink to='/' exact activeClassName='active'>
+              <li key='home'>
               home
-              </NavLink>
-            </li>
-            <li key='newPoll'>
-              <NavLink to='/add' exact activeClassName='active'>
+              </li>
+            </NavLink>
+            <NavLink to='/add' exact activeClassName='active'>
+              <li key='newPoll'>
               new poll +
-              </NavLink>
-            </li>
-            <li key='leaderboard'>
-              <NavLink to='/leaderboard' exact activeClassName='active'>
+              </li>
+            </NavLink>
+            <NavLink to='/leaderboard' exact activeClassName='active'>
+              <li key='leaderboard'>
                 leaderboard
-              </NavLink>
-            </li>
+              </li>
+            </NavLink>
             <li key='logout' className='logout-link'><button onClick={this.handleLogoutUser}>logout</button></li>
           </ul>
         </div>

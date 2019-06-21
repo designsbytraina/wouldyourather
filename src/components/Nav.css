@@ -11,6 +11,8 @@
   margin-left: 45px;
   margin-top: 13px;
   text-shadow: 2px 2px #ff0000;
+  text-decoration: none;
+  color: white;
 }
 
 .site-links {
@@ -23,6 +25,12 @@
   margin-right: 50px;
   padding-top: 5px;
   font-size: large;
+  color: white;
+}
+.active {
+  /*background-color: rgba(247,181,125,.2);*/
+  /*color: !important#DE6B0A;*/
+  /*border-bottom: 1px solid black;*/
 }
 
 .logout-link {

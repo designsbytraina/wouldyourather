@@ -1,21 +1,93 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { handleQuestionAnswer } from '../actions/questions';
 import './PollUnanswered.css';
 
 class PollUnanswered extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleVote = this.handleVote.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+
+    this.state = {
+      userChoice: '',
+      toDashboard: false
+    }
+  }
+
+  handleVote(e) {
+    e.preventDefault();
+
+    const answer = this.state.userChoice;
+
+    if (answer === '') {
+      alert('Please enter an answer :)');
+      return
+    }
+
+    const { dispatch, id, authedUser } = this.props;
+
+    dispatch(handleQuestionAnswer({
+      authedUser,
+      id,
+      answer
+    }))
+
+    this.setState({toDashboard: true});
+  }
+
+  handleToggle(e) {
+    e.preventDefault();
+    const inputValue = e.target.value;
+
+    if (inputValue === 'optionTwo') {
+      e.target.previousSibling.previousSibling.removeAttribute('id', 'selected');
+    } else if (inputValue === 'optionOne') {
+      e.target.nextSibling.nextSibling.removeAttribute('id', 'selected');
+    }
+
+    if (e.target.hasAttribute('id', 'selected') === true) {
+      e.target.removeAttribute('id', 'selected');
+    } else {
+      e.target.setAttribute('id', 'selected');
+    }
+
+    this.setState({
+      userChoice: inputValue
+    });
+  }
+
   render() {
+    const { question, authedUser, id } = this.props;
+
+    if (this.state.toDashboard === true) {
+      return <Redirect to='/' />
+    }
+
     return (
         <div className='PollUnanswered'>
-          <span className='poll-author-name'>AUTHOR asks:</span>
+          <span className='poll-author-name'>{question.author} asks:</span>
           <span className='pd-wyr-body-intro'>Would you rather ...</span>
           <div className='poll-detail-options'>
-            <span id='selected' className='optiona-unanswered'>optionA</span>
+          <span>
+            <option className='optiona-unanswered' onClick={this.handleToggle} value='optionOne' name='optionOne'>{question.optionOne.text}</option>
             <strong>OR</strong>
-            <span className='optionb-unanswered'>optionB</span>
+            <option className='optionb-unanswered' onClick={this.handleToggle} value='optionTwo' name='optionTwo'>{question.optionTwo.text}</option>
+          </span>
+          <button className='poll-detail-btn btn' onClick={this.handleVote}>vote</button>
           </div>
-          <button className='poll-detail-btn btn'>vote</button>
         </div>
     )
   }
 }
 
-export default PollUnanswered;
+function mapStateToProps( {questions, authedUser}, {id} ) {
+  return {
+    question: questions[id],
+    authedUser,
+    id
+  }
+}
+
+export default connect(mapStateToProps)(PollUnanswered);
