@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import LoadingBar from 'react-redux-loading';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import Nav from './Nav';
 import Login from './Login';
@@ -22,31 +22,42 @@ class App extends React.Component {
   render () {
     const authedUser = this.props.authedUser;
     const loading = this.props.loading;
-
-    return (
-      <Router>
-        <React.Fragment>
-          <LoadingBar />
-          <div className="App">
-            <Nav />
-            {authedUser === ''
-              ? <Login />
-              : null
-            }
+    if (authedUser === '') {
+      return (
+        <Router>
+          <React.Fragment>
+            <LoadingBar />
+            <div className='App'>
             {loading === true
               ? null
-              : <div>
-                  <Route exact path='/' exact component={Dashboard} />
-                  <Route exact path='/questions/:id' exact component={PollDetail} />
-                  <Route exact path='/add' exact component={NewPoll} />
-                  <Route exact path='/leaderboard' exact component={Leaderboard} />
-                  <Route exact path='/oops' exact component={_404} />
-                </div>}
-
-          </div>
-        </React.Fragment>
-      </Router>
-    )
+              : <Login />
+            }
+            </div>
+          </React.Fragment>
+        </Router>
+      )
+    } else {
+      return (
+        <Router>
+          <React.Fragment>
+          <LoadingBar />
+            <div className='App'>
+              <Nav />
+              {loading === true
+                ? null
+                : <div>
+                    <Route exact path='/' exact component={Dashboard} />
+                    <Route exact path='/questions/:id' exact component={PollDetail} />
+                    <Route exact path='/add' exact component={NewPoll} />
+                    <Route exact path='/leaderboard' exact component={Leaderboard} />
+                    <Route exact path='/oops' exact component={_404} />
+                  </div>
+                }
+            </div>
+          </React.Fragment>
+        </Router>
+      )
+    }
   }
 }
 
