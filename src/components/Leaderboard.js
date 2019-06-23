@@ -1,25 +1,36 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import LeaderboardUser from './LeaderboardUser';
 import './Leaderboard.css';
 
 class Leaderboard extends React.Component {
-  state = {
-    count: [ 1,2,3,4,5 ]
-  }
-
   render() {
+    const { users } = this.props;
     return (
       <div className='Leaderboard'>
         <div className='leaderboard-label'>
           leaderboard
         </div>
-        {this.state.count.map( (c) => c === 1
-          ? <LeaderboardUser hiScore={true} />
-          : <LeaderboardUser hiScore={false} /> )
+        {Object.keys(users).forEach( (u) => {
+          const numQuestions = users[u].questions.length;
+          const numAnswers = users[u].answers;
+
+          return (<React.Fragment>
+            <LeaderboardUser hiScore={true} />
+            <LeaderboardUser hiScore={false} />
+          </React.Fragment>
+          )
+        })
         }
       </div>
     )
   }
 }
 
-export default Leaderboard;
+function mapStateToProps ({users}) {
+  return {
+    users
+  }
+}
+
+export default connect(mapStateToProps)(Leaderboard);

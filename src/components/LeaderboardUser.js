@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './LeaderboardUser.css';
 
 class LeaderboardUser extends React.Component {
@@ -34,4 +35,4 @@ class LeaderboardUser extends React.Component {
   }
 }
 
-export default LeaderboardUser;
+export default connect()(LeaderboardUser);
