@@ -6,8 +6,6 @@ import './PollDetail.css';
 
 class PollDetail extends React.Component {
   render() {
-    console.log(this.props.question);
-    console.log('######');
     if (this.props.isAnswered) {
       return (
         <div className='PollDetail'>

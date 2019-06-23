@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { unsetAuthedUser } from '../actions/authedUser';
 import './Nav.css';
 
 class Nav extends React.Component {
@@ -10,11 +11,12 @@ class Nav extends React.Component {
   }
 
   handleLogoutUser() {
-    // dispatch logout user event
-    console.log(this.props.authedUser);
+    const { dispatch, authedUser } = this.props;
+    dispatch(unsetAuthedUser(authedUser));
   }
 
   render() {
+    const { authedUser } = this.props;
     return (
       <div className='Nav'>
         <NavLink to='/' exact>
@@ -39,7 +41,7 @@ class Nav extends React.Component {
                 leaderboard
               </li>
             </NavLink>
-            <li key='logout' className='logout-link'><button onClick={this.handleLogoutUser}>logout</button></li>
+            <li key='logout' className='logout-link'><button onClick={this.handleLogoutUser}>logout {authedUser}</button></li>
           </ul>
         </div>
       </div>

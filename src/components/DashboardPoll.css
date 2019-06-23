@@ -1,46 +1,48 @@
 .DashboardPoll {
-  border: 1px solid grey;
   padding: 5px;
-  /*margin-bottom: 10px;*/
-  margin: 5px;
-  height: 290px;
+  margin: 10px;
+  height: 285px;
+  background-color: white;
+  border-radius: 10px;
 }
 .poll-card-img {
   display: inline-block;
+  height: 285px;
+  width: 30%;
 }
 .author-avatar {
   display: inline;
-  height: 290px;
-  width: 290px;
+  height: 285px;
+  width: 285px;
+  border-radius: 10px;
 }
 
 .poll-card-body {
   display: inline-block;
-  /*height: 290px;*/
-  float: right;
+  vertical-align: top;
+  width: 70%;
 }
 
 .author-name, .wyr-body-text {
   display: block;
-  margin-right: 515px;
 }
 .author-name {
   margin-top: 15px;
   color: grey;
 }
 .wyr-body-text {
-  margin: 70px 0 20px 0;
+  margin: 40px 0 30px 0;
   font-size: x-large;
 }
 .wyr-body-options {
-/*  margin: 0 45px;*/
   display: inline;
   font-size: large;
   font-style: italic;
 }
 
 .dashboard-poll-btn {
-  float: right;
-  margin-top: 100px;
-  width: 85px;
+  text-decoration: unset;
+  margin-top: 95px;
+  margin-left: 685px;
+  width: 90px;
 }

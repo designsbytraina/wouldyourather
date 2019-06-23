@@ -19,12 +19,15 @@ class Login extends React.Component {
 
   handleChange(e) {
     const userId = e.target.value;
-    console.log(userId);
     this.setState({userId: userId});
   }
 
   handleLogin(e) {
     e.preventDefault();
+    if (this.state.userId === '') {
+      alert('Please choose a username to login.');
+      return
+    }
     const { dispatch } = this.props;
     dispatch(setAuthedUser(this.state.userId));
     this.setState({toDashboard: true});

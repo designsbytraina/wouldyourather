@@ -59,7 +59,7 @@ class PollUnanswered extends React.Component {
   }
 
   render() {
-    const { question, authedUser, id } = this.props;
+    const { question } = this.props;
 
     if (this.state.toDashboard === true) {
       return <Redirect to='/' />

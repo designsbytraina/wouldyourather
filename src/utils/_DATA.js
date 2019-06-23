@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: '',
+    avatarURL: 'https://api.adorable.io/avatars/285/sarah.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,17 +14,17 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: '',
+    avatarURL: 'https://api.adorable.io/avatars/285/tyler.png',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
-      "xj352vofupe1dqz9emx13r": 'optionTwo',
+      "xj352vofupe1dqz9emx13r": 'optionTwo'
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  johndoe: {
-    id: 'johndoe',
-    name: 'John Doe',
-    avatarURL: '',
+  janedoe: {
+    id: 'janedoe',
+    name: 'Jane Doe',
+    avatarURL: 'https://api.adorable.io/avatars/285/jane.png',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -50,14 +50,14 @@ let questions = {
   },
   "6ni6ok3ym7mf1p33lnez": {
     id: '6ni6ok3ym7mf1p33lnez',
-    author: 'johndoe',
+    author: 'janedoe',
     timestamp: 1468479767190,
     optionOne: {
       votes: [],
       text: 'become a superhero',
     },
     optionTwo: {
-      votes: ['johndoe'],
+      votes: ['janedoe'],
       text: 'become a supervillain'
     }
   },
@@ -96,16 +96,16 @@ let questions = {
       text: 'find $50 yourself',
     },
     optionTwo: {
-      votes: ['johndoe'],
+      votes: ['janedoe'],
       text: 'have your best friend find $500'
     }
   },
   "xj352vofupe1dqz9emx13r": {
     id: 'xj352vofupe1dqz9emx13r',
-    author: 'johndoe',
+    author: 'janedoe',
     timestamp: 1493579767190,
     optionOne: {
-      votes: ['johndoe'],
+      votes: ['janedoe'],
       text: 'write JavaScript',
     },
     optionTwo: {

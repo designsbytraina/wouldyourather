@@ -17,4 +17,9 @@ html, body, #root {
   font-weight: 600;
   color: white;
   border: none;
+  border-radius: 3px;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
 }

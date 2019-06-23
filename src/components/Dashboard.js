@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import DashboardPoll from './DashboardPoll';
+import Login from './Login';
 import './Dashboard.css'
 
 class Dashboard extends React.Component {
@@ -19,8 +20,12 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    const { authedUser } = this.props;
+    if (authedUser === '' || authedUser === null) {
+      return <Login />
+    }
     let authedUserAnswered = [];
-    const authedUserQuestions = this.props.users[this.props.authedUser].questions;
+    const authedUserQuestions = this.props.users[authedUser].questions;
     authedUserQuestions.forEach( (q) => {
         let answeredQuestion = this.props.questions[q];
         authedUserAnswered.push(answeredQuestion);
@@ -28,24 +33,32 @@ class Dashboard extends React.Component {
     )
 
     let authedUserUnanswered = [];
-    Object.keys(this.props.questions).filter((q) => {
+    Object.keys(this.props.questions).forEach((q) => {
       if (!authedUserQuestions.includes(q)) {
         authedUserUnanswered.push(this.props.questions[q])
-      }
-    });
+      }});
 
     return (
       <div className='Dashboard'>
-        <button onClick={this.toggleDashboard} className='unanswered dashboard-btn' value='unanswered'>unanswered</button>
-        <button onClick={this.toggleDashboard} className='answered dashboard-btn' value='answered'>answered</button>
+      {this.state.filterDashboard === 'unanswered'
+        ? <React.Fragment>
+            <button onClick={this.toggleDashboard} className='unanswered dashboard-btn' value='unanswered'>unanswered</button>
+            <button onClick={this.toggleDashboard} className='answered dashboard-btn' value='answered'>answered</button>
+          </React.Fragment>
+
+        : <React.Fragment>
+            <button onClick={this.toggleDashboard} className='answered dashboard-btn' value='unanswered'>unanswered</button>
+            <button onClick={this.toggleDashboard} className='unanswered dashboard-btn' value='answered'>answered</button>
+          </React.Fragment>
+      }
         {this.state.filterDashboard === 'unanswered'
           ? <div className='dashboard-poll-list'>
-            {authedUserUnanswered.map( (q) => {
+            {authedUserUnanswered.reverse().map( (q) => {
               return <DashboardPoll key={q.id} id={q.id} userAnswered={false}/>
             } )}
             </div>
           : <div className='dashboard-poll-list'>
-            {authedUserAnswered.map( (q) => {
+            {authedUserAnswered.reverse().map( (q) => {
               return <DashboardPoll key={q.id} id={q.id} userAnswered={true}/>
             } )}
             </div>

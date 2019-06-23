@@ -1,6 +1,6 @@
 .Nav {
   background-color: #F7B57D;
-  height: 65px;
+  height: 70px;
   color: white;
 }
 
@@ -19,20 +19,27 @@
   float: right;
   display: inline-block;
 }
-.site-links ul li {
+.site-links ul li, .logout-link {
   text-decoration: none;
   display: inline-block;
   margin-right: 50px;
-  padding-top: 5px;
+  /*padding-top: 5px;*/
   font-size: large;
   color: white;
 }
-.active {
-  /*background-color: rgba(247,181,125,.2);*/
-  /*color: !important#DE6B0A;*/
-  /*border-bottom: 1px solid black;*/
+.active li {
+  border-bottom: 6px solid white;
 }
 
 .logout-link {
-  padding-left: 120px;
+
+}
+.logout-link button {
+  border: 1px solid white;
+  /*background-color: rgba(247,181,125,.2);*/
+  background-color: #FFA252;
+  color: white;
+  font-size: medium;
+  font-weight: 700;
+  padding: 6px;
 }

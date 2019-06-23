@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import LoadingBar from 'react-redux-loading';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Nav from './Nav';
 import Login from './Login';
@@ -22,7 +22,7 @@ class App extends React.Component {
   render () {
     const authedUser = this.props.authedUser;
     const loading = this.props.loading;
-    if (authedUser === '') {
+    if (authedUser === '' || authedUser === null) {
       return (
         <Router>
           <React.Fragment>
@@ -30,7 +30,15 @@ class App extends React.Component {
             <div className='App'>
             {loading === true
               ? null
-              : <Login />
+              : <div>
+                  <Switch>
+                    <Route path='/' exact component={Login} />
+                    <Route path='/questions/:id' exact component={_404} />
+                    <Route path='/add' exact component={_404} />
+                    <Route path='/leaderboard' exact component={_404} />
+                    <Route exact component={_404} />
+                  </Switch>
+                </div>
             }
             </div>
           </React.Fragment>
@@ -46,11 +54,13 @@ class App extends React.Component {
               {loading === true
                 ? null
                 : <div>
-                    <Route exact path='/' exact component={Dashboard} />
-                    <Route exact path='/questions/:id' exact component={PollDetail} />
-                    <Route exact path='/add' exact component={NewPoll} />
-                    <Route exact path='/leaderboard' exact component={Leaderboard} />
-                    <Route exact path='/oops' exact component={_404} />
+                    <Switch>
+                      <Route path='/' exact component={Dashboard} />
+                      <Route path='/questions/:id' exact component={PollDetail} />
+                      <Route path='/add' exact component={NewPoll} />
+                      <Route path='/leaderboard' exact component={Leaderboard} />
+                      <Route exact component={_404} />
+                    </Switch>
                   </div>
                 }
             </div>

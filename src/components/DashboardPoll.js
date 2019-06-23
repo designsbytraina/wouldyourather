@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { formatQuestion } from '../utils/_DATA';
 import './DashboardPoll.css';
 
 class DashboardPoll extends React.Component {
   render() {
-    const { question } = this.props;
+    const { question, authorInfo } = this.props;
+    console.log(authorInfo.avatarURL);
     const author = question.author;
     const optionOne = question.optionOne.text;
     const optionTwo = question.optionTwo.text;
@@ -14,12 +14,12 @@ class DashboardPoll extends React.Component {
     return (
       <div className='DashboardPoll'>
         <div className='poll-card-img'>
-          <img alt='placeholder' className='author-avatar' src='https://via.placeholder.com/290x290'/>
+          <img alt='placeholder' className='author-avatar' src={authorInfo.avatarURL}/>
         </div>
         <div className='poll-card-body'>
           <span className='author-name'>{author} asks:</span>
           <span className='wyr-body-text'>Would you rather ...</span>
-          <span className='wyr-body-options'><strong>{optionOne}</strong></span> or <span className='wyr-body-options'><strong>{optionTwo}</strong></span>
+          <span className='wyr-body-options'><strong>{optionOne}</strong></span> or <span className='wyr-body-options'><strong>{optionTwo}</strong></span><br/>
           <Link to={{
             pathname: `/questions/${question.id}`,
             state: {
@@ -33,15 +33,14 @@ class DashboardPoll extends React.Component {
   }
 }
 
-function mapStateToProps ({authedUser, questions}, {id, userAnswered}) {
+function mapStateToProps ({authedUser, questions, users}, {id, userAnswered}) {
   const question = questions[id];
-  const optionOneText = question.optionOne.text;
-  const optionTwoText = question.optionTwo.text;
-  const questionAuthor = question.author;
+  const authorInfo = users[question.author];
 
   return {
     authedUser,
     userAnswered,
+    authorInfo,
     question: question
       ? question
       : null,

@@ -8,7 +8,10 @@
   padding: 40px 0;
   text-align: center;
   /*display: inline-block;*/
-
+}
+.back-btn {
+  float: right;
+  margin-right: 15px;
 }
 .optiona-answered, .optionb-answered {
   display: inline;
