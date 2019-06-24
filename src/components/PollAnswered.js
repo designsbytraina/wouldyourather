@@ -20,13 +20,14 @@ class PollAnswered extends React.Component {
     if (this.state.toDashboard === true) {
       return <Redirect to='/' />
     }
-    const { question, userChoice } = this.props;
+    const { question, author, userChoice } = this.props;
 
     const optionOnePercentage = Math.round( ((question.optionOne.votes.length) / (question.optionOne.votes.length + question.optionTwo.votes.length))*100 );
     const optionTwoPercentage = Math.round( ((question.optionTwo.votes.length) / (question.optionOne.votes.length + question.optionTwo.votes.length))*100 );
 
     return (
         <div className='PollAnswered'>
+          <img alt='placeholder' className='detail-avatar' src={author.avatarURL}/>
           <span className='poll-author-name'>{question.author} asked:</span>
           <button onClick={this.handleClick} className='back-btn btn'>answer more</button>
           <span className='pd-wyr-body-intro'>Would you rather ...</span>
@@ -55,7 +56,7 @@ class PollAnswered extends React.Component {
   }
 }
 
-function mapStateToProps ({questions, authedUser}, props) {
+function mapStateToProps ({questions, users, authedUser}, props) {
   const id = props.id;
   const optionOneVotes = questions[id].optionOne.votes.includes(authedUser);
   // const optionTwoVotes = questions[id].optionTwo.votes.includes(authedUser);
@@ -63,6 +64,7 @@ function mapStateToProps ({questions, authedUser}, props) {
 
   return {
     question: questions[id],
+    author: users[questions[id].author],
     authedUser,
     userChoice
   }

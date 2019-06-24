@@ -5,7 +5,7 @@
   height: 100%;
 }
 .poll-author-name {
-  margin-left: 15px;
+  /*margin-left: 5px;*/
   color: grey;
   /*margin-bottom: 5px;*/
   /*padding-top: -10px;*/
@@ -14,7 +14,15 @@
   /*margin: 0 auto;*/
   display: block;
   font-size: x-large;
-  margin-left: 15px;
+  /*margin-left: 15px;*/
   margin-top: 10px;
   /*margin-bottom: 10px;*/
+}
+.detail-avatar {
+  height: 50px;
+  width: 50px;
+  /*text-align: left;*/
+  float: left;
+  display: inline;
+  margin-right: 10px;
 }

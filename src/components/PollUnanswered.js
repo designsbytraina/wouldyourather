@@ -59,7 +59,7 @@ class PollUnanswered extends React.Component {
   }
 
   render() {
-    const { question } = this.props;
+    const { question, author } = this.props;
 
     if (this.state.toDashboard === true) {
       return <Redirect to='/' />
@@ -67,26 +67,30 @@ class PollUnanswered extends React.Component {
 
     return (
         <div className='PollUnanswered'>
-          <span className='poll-author-name'>{question.author} asks:</span>
-          <span className='pd-wyr-body-intro'>Would you rather ...</span>
-          <div className='poll-detail-options'>
-          <span>
-            <option className='optiona-unanswered' onClick={this.handleToggle} value='optionOne' name='optionOne'>{question.optionOne.text}</option>
-            <strong>OR</strong>
-            <option className='optionb-unanswered' onClick={this.handleToggle} value='optionTwo' name='optionTwo'>{question.optionTwo.text}</option>
-          </span>
-          <button className='poll-detail-btn btn' onClick={this.handleVote}>vote</button>
+          <div>
+            <img alt='placeholder' className='detail-avatar' src={author.avatarURL}/>
+            <span className='poll-author-name'>{question.author} asks:</span>
+            <span className='pd-wyr-body-intro'>Would you rather ...</span>
+            <div className='poll-detail-options'>
+            <div>
+              <option className='optiona-unanswered' onClick={this.handleToggle} value='optionOne' name='optionOne'>{question.optionOne.text}</option>
+              <strong>OR</strong>
+              <option className='optionb-unanswered' onClick={this.handleToggle} value='optionTwo' name='optionTwo'>{question.optionTwo.text}</option>
+            </div>
+            <button className='poll-detail-btn btn' onClick={this.handleVote}>vote</button>
+            </div>
           </div>
         </div>
     )
   }
 }
 
-function mapStateToProps( {questions, authedUser}, {id} ) {
+function mapStateToProps( {questions, users, authedUser}, {id} ) {
   return {
     question: questions[id],
     authedUser,
-    id
+    id,
+    author: users[questions[id].author]
   }
 }
 
