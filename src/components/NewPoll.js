@@ -28,15 +28,15 @@ class NewPoll extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { dispatch } = this.props;
+    if (this.state.optionOneText === '' || this.state.optionTwoText === '') {
+      alert('Please enter two options before submitting.');
+      return
+    }
     dispatch(handleAddQuestion({
       optionOneText: this.state.optionOneText,
       optionTwoText: this.state.optionTwoText
     }))
     this.setState({toDashboard:true});
-
-    // console.log('$$$$');
-    // console.log(this.state.optionOneText);
-    // console.log(this.state.optionTwoText);
   }
 
   render() {

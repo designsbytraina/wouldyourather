@@ -1,6 +1,7 @@
 .PollAnswered {
-  border: 1px solid grey;
+  border: 1px solid #D5D2D2;
   padding: 30px 1px 30px 0;
+  border-radius: 5px;
 }
 .poll-detail-results {
   /*background-color: red;*/

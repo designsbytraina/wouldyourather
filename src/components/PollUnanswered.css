@@ -1,6 +1,8 @@
 .PollUnanswered {
-  border: 1px solid grey;
+  border: 1px solid #D5D2D2;
   padding: 30px 1px 50px 0;
+  border-radius: 5px;
+  /*box-shadow: 4px 4px #D5D2D2;*/
 }
 .optiona-unanswered, .optionb-unanswered {
   display: block;

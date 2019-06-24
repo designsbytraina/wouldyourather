@@ -41,7 +41,9 @@ class Nav extends React.Component {
                 leaderboard
               </li>
             </NavLink>
-            <li key='logout' className='logout-link'><button onClick={this.handleLogoutUser}>logout {authedUser}</button></li>
+            <NavLink to='/' activeClassName='logout-nav-link'>
+              <li key='logout' className='logout-link'><button onClick={this.handleLogoutUser}>logout {authedUser}</button></li>
+            </NavLink>
           </ul>
         </div>
       </div>

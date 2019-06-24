@@ -8,8 +8,11 @@
   font-size: x-large;
 }
 .new-poll-body {
-  border: 1px solid grey;
+  border: 1px solid #D5D2D2;
   padding: 50px;
+  background-color: white;
+  border-radius: 5px;
+  /*box-shadow: 4px 4px #D5D2D2;*/
 }
 .wyr-body-intro {
   /*margin: 0 auto;*/
