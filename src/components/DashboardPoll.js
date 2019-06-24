@@ -6,7 +6,6 @@ import './DashboardPoll.css';
 class DashboardPoll extends React.Component {
   render() {
     const { question, authorInfo } = this.props;
-    console.log(authorInfo.avatarURL);
     const author = question.author;
     const optionOne = question.optionOne.text;
     const optionTwo = question.optionTwo.text;

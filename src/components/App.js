@@ -11,7 +11,6 @@ import NewPoll from './NewPoll';
 import Leaderboard from './Leaderboard';
 import PollDetail from './PollDetail';
 import _404 from './404.js';
-// import logo from '../logo.svg';
 import './App.css';
 
 class App extends React.Component {

@@ -59,7 +59,6 @@ class PollAnswered extends React.Component {
 function mapStateToProps ({questions, users, authedUser}, props) {
   const id = props.id;
   const optionOneVotes = questions[id].optionOne.votes.includes(authedUser);
-  // const optionTwoVotes = questions[id].optionTwo.votes.includes(authedUser);
   const userChoice = optionOneVotes === true ? 'optionOne' : 'optionTwo'
 
   return {

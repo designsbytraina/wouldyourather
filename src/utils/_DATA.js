@@ -132,7 +132,6 @@ export function _getQuestions () {
 }
 
 function formatQuestion ({ optionOneText, optionTwoText, author }) {
-  console.log('got here!');
   console.log(optionOneText, optionTwoText, author);
   return {
     id: generateUID(),
@@ -174,7 +173,6 @@ export function _saveQuestion (question) {
 }
 
 export function _saveQuestionAnswer ({ authedUser, id, answer }) {
-  // console.log(authedUser, id, answer);
   return new Promise((res, rej) => {
     setTimeout(() => {
       users = {
