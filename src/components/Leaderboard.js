@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import LeaderboardUser from './LeaderboardUser';
+import Login from './Login';
 import './Leaderboard.css';
 
 class Leaderboard extends React.Component {
@@ -20,8 +21,12 @@ class Leaderboard extends React.Component {
   }
 
   render() {
-    const { users } = this.props;
+    const { users, authedUser } = this.props;
     const { userScores, hiScoreUser } = this.calculateHiScore(users);
+
+    if (authedUser === '' || authedUser === null) {
+      return <Login />
+    }
 
     return (
       <div className='Leaderboard'>
@@ -39,9 +44,10 @@ class Leaderboard extends React.Component {
   }
 }
 
-function mapStateToProps ({users}) {
+function mapStateToProps ({users, authedUser}) {
   return {
-    users
+    users,
+    authedUser
   }
 }
 

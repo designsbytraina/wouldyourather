@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleAddQuestion } from '../actions/questions';
+import Login from './Login';
 import './NewPoll.css';
 
 class NewPoll extends React.Component {
@@ -40,6 +41,11 @@ class NewPoll extends React.Component {
   }
 
   render() {
+    const { authedUser } = this.props;
+    if (authedUser === '' || authedUser === null) {
+      return <Login />
+    }
+
     if (this.state.toDashboard === true) {
       return <Redirect to='/' />
     }
@@ -62,4 +68,9 @@ class NewPoll extends React.Component {
   }
 }
 
-export default connect()(NewPoll);
+function mapStateToProps ({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+export default connect(mapStateToProps)(NewPoll);

@@ -33,9 +33,9 @@ class App extends React.Component {
               : <div>
                   <Switch>
                     <Route path='/' exact component={Login} />
-                    <Route path='/questions/:id' exact component={_404} />
-                    <Route path='/add' exact component={_404} />
-                    <Route path='/leaderboard' exact component={_404} />
+                    <Route path='/questions/:id' exact component={Login} />
+                    <Route path='/add' exact component={Login} />
+                    <Route path='/leaderboard' exact component={Login} />
                     <Route exact component={_404} />
                   </Switch>
                 </div>

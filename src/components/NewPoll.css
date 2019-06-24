@@ -1,6 +1,6 @@
 .NewPoll {
   width: 35%;
-  margin: 3% auto;
+  margin: 65px auto;
   padding: 10px;
 }
 
@@ -8,7 +8,7 @@
   font-size: x-large;
 }
 .new-poll-body {
-  border: 1px solid #D5D2D2;
+  border: 25px solid #F7B57D;
   padding: 50px;
   background-color: white;
   border-radius: 5px;
@@ -33,6 +33,9 @@
   height: 40px;
   font-size: large;
   font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px;
+  /*border-radius: 1px;*/
 }
 .new-poll-btn {
   width: 105px;
