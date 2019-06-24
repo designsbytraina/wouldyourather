@@ -1,68 +1,39 @@
+# Would You Rather?: A Game of Choices
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+**Would You Rather?** was created as part of *Udacity's React Nanodegree Program* and fulfills the Would You Rather? application rubric.
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+This application allows for users to post and answer user-submitted *Would you Rather* polls/questions, and tracks their progress in a leaderboard (`/leaderboard`) where they can compete with their friends to see who has participated the most with the platform.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+At the main route (`/`), users will be prompted to login before viewing the Dashboard (`/`), where all polls answered or unanswered by the current user can be viewed. Users can view additional details about a poll by clicking the "view poll" buttons on this page.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+At the add new poll route (`/add`), users can create new polls which will display on the home page once submitted and view their progress on the leaderboard (`/leaderboard`).
 
-### `npm test`
+Finally, users may not view any pages without being logged in, so once a user has logged out using the "logout" button in the navigation, they will be brought back to `/` and be prompted to login before viewing the app again.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running the Project
 
-### `npm run build`
+Before starting the project, you will need to add the required scripts to your project. These dependencies are noted in `package.json` and can be added to your project by running:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ npm install
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Once dependencies are installed and you're ready to start the project, you can run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+$ npm start
+```
 
-### `npm run eject`
+This runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The page will reload if you make edits. You will also see any lint errors in the console.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
+## Further Reading
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
