@@ -28,7 +28,7 @@ let users = {
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
-      "6ni6ok3ym7mf1p33lnez": 'optionTwo'
+      "6ni6ok3ym7mf1p33lnez": 'optionTwo',
     },
     questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r'],
   }
@@ -57,7 +57,7 @@ let questions = {
       text: 'become a superhero',
     },
     optionTwo: {
-      votes: ['janedoe'],
+      votes: ['janedoe', 'sarahedo'],
       text: 'become a supervillain'
     }
   },
@@ -83,7 +83,7 @@ let questions = {
       text: 'be a front-end developer',
     },
     optionTwo: {
-      votes: [],
+      votes: ['sarahedo'],
       text: 'be a back-end developer'
     }
   },

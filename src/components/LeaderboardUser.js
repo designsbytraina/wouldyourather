@@ -20,7 +20,7 @@ class LeaderboardUser extends React.Component {
         <div id={HiScoreText} className='user-card-body'>
           <span className='user-name'>{user}</span>
           <div className='user-stats'>
-            <table class='user-poll-totals'>
+            <table className='user-poll-totals'>
               <tbody>
                 <tr className='stats-row'>
                   <td className='row-title'>created polls</td>

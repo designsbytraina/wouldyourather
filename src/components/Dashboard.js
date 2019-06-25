@@ -25,18 +25,22 @@ class Dashboard extends React.Component {
       return <Login />
     }
     let authedUserAnswered = [];
-    const authedUserQuestions = this.props.users[authedUser].questions;
-    authedUserQuestions.forEach( (q) => {
+    let authedUserUnAnswered = this.props.users[authedUser].answers;
+    authedUserUnAnswered = Object.keys(authedUserUnAnswered);
+    authedUserUnAnswered.forEach( (q) => {
         let answeredQuestion = this.props.questions[q];
-        authedUserAnswered.push(answeredQuestion);
+        authedUserAnswered.push([answeredQuestion, answeredQuestion.timestamp]);
       }
     )
+    authedUserAnswered.sort( (a,b) => a[1] - b[1] ).reverse();
 
     let authedUserUnanswered = [];
     Object.keys(this.props.questions).forEach((q) => {
-      if (!authedUserQuestions.includes(q)) {
-        authedUserUnanswered.push(this.props.questions[q])
+      if (!authedUserUnAnswered.includes(q)) {
+        let unansweredQuestion = this.props.questions[q];
+        authedUserUnanswered.push([unansweredQuestion, unansweredQuestion.timestamp]);
       }});
+    authedUserUnanswered.sort( (a,b) => a[1] - b[1] ).reverse();
 
     return (
       <div className='Dashboard'>
@@ -53,13 +57,13 @@ class Dashboard extends React.Component {
       }
         {this.state.filterDashboard === 'unanswered'
           ? <div className='dashboard-poll-list'>
-            {authedUserUnanswered.reverse().map( (q) => {
-              return <DashboardPoll key={q.id} id={q.id} userAnswered={false}/>
+            {authedUserUnanswered.map( (q) => {
+              return <DashboardPoll key={q[0].id} id={q[0].id} userAnswered={false}/>
             } )}
             </div>
           : <div className='dashboard-poll-list'>
-            {authedUserAnswered.reverse().map( (q) => {
-              return <DashboardPoll key={q.id} id={q.id} userAnswered={true}/>
+            {authedUserAnswered.map( (q) => {
+              return <DashboardPoll key={q[0].id} id={q[0].id} userAnswered={true}/>
             } )}
             </div>
         }
@@ -69,12 +73,18 @@ class Dashboard extends React.Component {
 }
 
 function mapStateToProps ({ questions, authedUser, users }) {
+  // let questionsObject = questions;
+  // let sortedQuestions = [];
+  // Object.keys(questionsObject).forEach( (q) => sortedQuestions.push([questions[q], questions[q].timestamp]) );
+  // sortedQuestions.sort( (a,b) => a[1] - b[1] ).reverse();
+
   return {
     authedUser,
     users,
     questions,
-    questionIds: Object.keys(questions)
-      .sort((a,b) => questions[a].timestamp - questions[b].timestamp)
+    // sortedQuestions
+    // questionIds: Object.keys(questions)
+    //   .sort((a,b) => questions[a].timestamp - questions[b].timestamp)
   }
 }
 

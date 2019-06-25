@@ -34,7 +34,8 @@ class PollAnswered extends React.Component {
           <div className='poll-detail-results'>
             <div className='optiona-answered'>
               <span className='optiona-answered-text'>{question.optionOne.text}?</span>
-              <span className='optiona-answered-count'>{optionOnePercentage}%</span>
+              <span className='optiona-answered-percent'>{optionOnePercentage}%</span>
+              <span className='optiona-answered-count'>{question.optionOne.votes.length} voted for this</span>
               {userChoice === 'optionOne'
                 ? <span className='authuser-choice'>YOUR ANSWER</span>
                 : null
@@ -43,7 +44,8 @@ class PollAnswered extends React.Component {
             <span className='or-text'><strong>OR</strong></span>
             <div className='optionb-answered'>
               <span className='optionb-answered-text'>{question.optionTwo.text}?</span>
-              <span className='optionb-answered-count'>{optionTwoPercentage}%</span>
+              <span className='optionb-answered-percent'>{optionTwoPercentage}%</span>
+              <span className='optionb-answered-count'>{question.optionTwo.votes.length} voted for this</span>
               {userChoice === 'optionTwo'
                 ? <span className='authuser-choice'>YOUR ANSWER</span>
                 : null

@@ -22,13 +22,13 @@
   height: 100px;
   /*height: 100px;*/
 }
-.optiona-answered-text, .optionb-answered-text, .optiona-answered-count, .optionb-answered-count {
+.optiona-answered-text, .optionb-answered-text, .optiona-answered-percent, .optionb-answered-percent, .optiona-answered-count, .optionb-answered-count {
   display: block;
 }
 .optiona-answered-text, .optionb-answered-text {
   padding-bottom: 30px;
 }
-.optiona-answered-count, .optionb-answered-count {
+.optiona-answered-percent, .optionb-answered-percent {
   font-size: xx-large;
 }
 .optiona-answered {
@@ -39,8 +39,9 @@
 .optiona-answered-text {
   padding-bottom: 30px;
 }
-.optiona-answered-count {
-
+.optiona-answered-count, .optionb-answered-count {
+  margin-top: 20px;
+  font-size: x-small;
 }
 .optionb-answered {
   background-color: #D5D2D2;
@@ -58,7 +59,7 @@
 .authuser-choice {
   /*display: inline-block;*/
   float: right;
-  margin-top: 40px;
+  margin-top: 10px;
   font-size: small;
   /*padding-top: 20px;*/
   margin-right: 7px;

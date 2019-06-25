@@ -58,6 +58,7 @@ class App extends React.Component {
                       <Route path='/questions/:id' exact component={PollDetail} />
                       <Route path='/add' exact component={NewPoll} />
                       <Route path='/leaderboard' exact component={Leaderboard} />
+                      <Route path='/404' exact component={_404} />
                       <Route exact component={_404} />
                     </Switch>
                   </div>
